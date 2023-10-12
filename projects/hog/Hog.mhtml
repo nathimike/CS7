@@ -1,0 +1,780 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://emziniwecode.com/cs7/proj/hog/
+Subject: Hog
+Date: Thu, 18 May 2023 21:20:23 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--RmsVH418UpIZOxH0E9MkWhkROuSCXdim31r7cZ49Ax----"
+
+
+------MultipartBoundary--RmsVH418UpIZOxH0E9MkWhkROuSCXdim31r7cZ49Ax----
+Content-Type: text/html
+Content-ID: <frame-BDDF8A25FD6CACCBBCC9974A3D570DD9@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://emziniwecode.com/cs7/proj/hog/
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dwindows-1252">
+<link href=3D"https://emziniwecode.com/cs7/proj/hog/assignments.css" rel=3D=
+"stylesheet" type=3D"text/css">
+<title>Hog</title>
+</head>
+
+<body>
+<h2>Project 1: The Game of Hog</h2>
+
+<blockquote style=3D"text-align: center;">
+  <div class=3D"c1">
+    <img src=3D"https://emziniwecode.com/cs7/proj/hog/die5.gif">
+  </div>
+
+  <p>
+    <cite>
+      I know! I'll use my<br>
+      Higher-order functions to<br>
+      Order higher rolls.
+    </cite>
+  </p>
+</blockquote>
+
+<h3>Introduction</h3>
+
+<p>In this project, you will develop a simulator and multiple strategies fo=
+r the
+dice game Hog. You will need to use control and higher-order functions toge=
+ther,
+from Sections 1.1 through 1.6 of the <a href=3D"http://composingprograms.co=
+m/pages/11-getting-started.html">Composing
+Programs</a> online text.</p>
+
+<p>Developed at University of California, Berkeley by <a href=3D"https://em=
+ziniwecode.com/cs7/proj/hog/">John DeNero</a> and the CS61A staff, this pro=
+ject is based on a <a href=3D"http://nifty.stanford.edu/2010neller-pig/">20=
+10 SIGCSE Nifty Assignment</a> by Todd Neller.</p>
+
+<p>In Hog, two players alternate turns trying to reach 100 points first. On=
+ each
+turn, the current player chooses some number of dice to roll, up to 10. Her=
+ turn
+score is the sum of the dice outcomes, unless any of the dice come up a 1, =
+in
+which case the score for her turn is only 1 point (the <b>Pig out</b> rule)=
+.</p>
+
+<p>To spice up the game, we will play with some special rules:</p>
+
+<ol>
+
+  <li><b>Free bacon</b>. If a player chooses to roll zero dice, she scores =
+one
+  more than the largest digit in her opponent's score. For example, if Play=
+er 1
+  has 42 points, Player 0 gains 1 + max(4, 2) =3D 5 points by rolling zero =
+dice.
+  If Player 1 has 48 points, Player 0 gains 1 + max(4, 8) =3D 9 points.</li=
+>
+
+  <li><b>Hog wild</b>. If the sum of both players' total scores is a multip=
+le of
+  seven (e.g., 14, 21, 35), then the current player rolls four-sided dice
+  instead of the usual six-sided dice.</li>
+
+  <li><b>Swine swap</b>. If at the end of a turn one of the player's total =
+score is
+  exactly double the other's, then the players swap total scores.
+
+  <i>Example 1:</i> Player 0 has 20 points and Player 1 has 5; it is Player=
+ 1's
+  turn. She scores 5 more, bringing her total to 10. The players swap score=
+s:
+  Player 0 now has 10 points and Player 1 has 20. It is now Player 0's turn=
+.
+
+  <i>Example 2</i>: Player 0 has 90 points and Player 1 has 50; it is Playe=
+r 0's
+  turn.  She scores 10 more, bringing her total to 100.  The players swap
+  scores, and Player 1 wins the game 100 to 50. </li>
+
+</ol>
+
+<p>This project includes six files, but all of your changes will be made to=
+ the
+first one, and it is the only one you should need to read and understand. T=
+o get
+started, <b>download</b> all of the project code as a <a href=3D"https://em=
+ziniwecode.com/cs7/proj/hog/hog.zip">zip
+archive</a>.</p>
+
+<table cellpadding=3D"10" cellspacing=3D"2">
+
+  <tbody><tr><td><p><code><a href=3D"https://emziniwecode.com/cs7/proj/hog/=
+hog.py.html">hog.py</a></code></p></td>
+    <td><p>A starter implementation of Hog.</p></td></tr>
+
+  <tr><td><p><code><a href=3D"https://emziniwecode.com/cs7/proj/hog/dice.py=
+.html">dice.py</a></code></p></td>
+    <td><p>Functions for rolling dice.</p></td></tr>
+
+  <tr><td><p><code><a href=3D"https://emziniwecode.com/cs7/proj/hog/ucb.py.=
+html">ucb.py</a></code></p></td>
+    <td><p>Utility functions used in the UC Berkeley Class.</p></td></tr>
+
+  <tr><td><p><code><a href=3D"https://emziniwecode.com/cs7/proj/hog/hog_gui=
+.py.html">hog_gui.py</a></code></p></td>
+    <td><p>A graphical user interface for Hog.</p></td></tr>
+
+  <tr><td><p><code><a href=3D"https://emziniwecode.com/cs7/proj/hog/hog_gra=
+der.py.html">hog_grader.py</a></code></p></td>
+    <td><p>Tests to check the correctness of your implementation.</p></td><=
+/tr>
+
+  <tr><td><p><code><a href=3D"https://emziniwecode.com/cs7/proj/hog/autogra=
+der.py.html">autograder.py</a></code></p></td>
+    <td><p>Utility functions for grading.</p></td></tr>
+
+</tbody></table>
+
+<h3>Logistics</h3>
+
+<p>This is a 10 day project. You are strongly encouraged to complete this p=
+roject with a partner, although you may complete it alone.</p>
+
+<p>Start early! The amount of time it takes to complete a project (or any
+program) is unpredictable.</p>
+
+<p>You are not alone! Ask for help early and often -- the TAs, lab assistan=
+ts, and your fellow students are here to help. Try attending office hours o=
+r posting on Piazza.</p>
+
+<p>In the end, you and your partner will submit one project. The project is
+worth 20 points. 17 points are assigned for correctness, and 3 points for t=
+he
+overall <a href=3D"https://emziniwecode.com/cs7/proj/hog/composition.html">=
+composition</a> of your program.</p>
+
+<p>The only file that you are required to submit is <code><a href=3D"https:=
+//emziniwecode.com/cs7/proj/hog/hog.py.html">hog.py</a></code>. You do
+not need to modify or turn in any other files to complete the project. To s=
+ubmit
+the project, upload your <code>hog.py</code> file to Gradescope.</p>
+
+<p>For the functions that we ask you to complete, there may be some initial=
+ code
+that we provide. If you would rather not use that code, feel free to delete=
+ it
+and start from scratch, though we higly advise against deleting the skeleto=
+n code. You may also add new function definitions as you see
+fit.</p>
+
+<p>However, please do <strong>not</strong> modify any other functions. Doin=
+g so
+may result in your code failing our autograder tests. Also, do not change a=
+ny
+function signatures (names, argument order, or number of arguments).</p>
+
+<h3>Graphical User Interface</h3>
+
+<p>A <b>graphical user interface</b> (GUI, for short) is provided for you. =
+At
+the moment, it doesn't work, because you haven't implemented the game logic=
+.
+Once you finish Problem 4 (the <code>play</code> function), you will be abl=
+e to
+play a fully interactive version of Hog!</p>
+
+<p>In order to render the graphics, make sure you have Tkinter, Python's ma=
+in
+graphics library, installed on your computer. Once you've done that, you ca=
+n run
+the GUI from your terminal:</p>
+
+<pre>      python3 hog_gui.py
+</pre>
+
+<p>Once you're done with Problem 9, you can play against the final strategy
+that you've created!</p>
+
+<pre>      python3 hog_gui.py -f
+</pre>
+
+<h3>Testing</h3>
+
+<p>Throughout this project, you should be testing the correctness of your c=
+ode.
+It is good practice to test often, so that it is easy to isolate any proble=
+ms.</p>
+
+<p>Many of the tests are contained within the docstrings of <code><a href=
+=3D"https://emziniwecode.com/cs7/proj/hog/hog.py.html">hog.py</a></code>.
+Additional tests are implemented in <code><a href=3D"https://emziniwecode.c=
+om/cs7/proj/hog/hog_grader.py.html">hog_grader.py</a></code>. To run all te=
+sts
+until a problem is found, run
+
+</p><pre>      python3 hog_grader.py
+</pre>
+
+<p>The command above runs all the tests until an error occurs, at which poi=
+nt it
+will stop and print some error messages. You can also run tests for a speci=
+fic
+question with <code>-q</code>:
+
+</p><pre>      python3 hog_grader.py -q 1
+</pre>
+
+<p>Within <code><a href=3D"https://emziniwecode.com/cs7/proj/hog/hog.py.htm=
+l">hog.py</a></code>, we've also provided a way to call certain
+functions interactively from the terminal:
+
+</p><pre>      python3 hog.py -i roll_dice
+</pre>
+
+
+<h3>Phase 1: Simulator</h3>
+
+<p>In the first phase, you will develop a simulator for the game of Hog.</p=
+>
+
+<p><strong>Problem 1</strong> (2 pt). Implement the <code>roll_dice</code>
+function in <code><a href=3D"https://emziniwecode.com/cs7/proj/hog/hog.py.h=
+tml">hog.py</a></code>, which returns the number of points scored by
+rolling a fixed positive number of dice: either the sum of the dice or 1. T=
+o
+obtain a single outcome of a dice roll, call <code>dice()</code>. You shoul=
+d
+call this function <em>exactly</em> <code>num_rolls</code> times in your
+implementation. The only rule you need to consider for this problem is <i>P=
+ig
+out</i>.</p>
+
+<p>As you work, you can add <code>print</code> statements to see what is
+happening in your program. Remove them when you are finished.</p>
+
+<p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 1
+</pre>
+
+<p>You can also run an interactive test, which allows you to type in the di=
+ce
+outcome, which is helpful for catching cases that are not handled in
+<code><a href=3D"https://emziniwecode.com/cs7/proj/hog/hog_grader.py.html">=
+hog_grader.py</a></code>:
+
+</p><pre>      python3 hog.py -i roll_dice
+</pre>
+
+<p><strong>Problem 2</strong> (1 pt). Implement the <code>take_turn</code>
+function, which returns the number of points scored for the turn.  You will=
+ need
+to implement the <i>Free bacon</i> rule here.  You can assume that
+<code>opponent_score</code> is less than 100. Your implementation should ca=
+ll
+<code>roll_dice</code>.</p>
+
+<p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 2
+</pre>
+
+<p>You can also run <code>take_turn</code> interactively, which allows you =
+to
+choose the number of rolls, the opponent's score, and the result of rolling=
+ the
+dice.
+
+</p><pre>      python3 hog.py -i take_turn
+</pre>
+
+<p><strong>Problem 3</strong> (1 pt). Implement <code>select_dice</code>, a
+helper function that will simplify the implementation of <code>play</code> =
+(next
+problem). The function <code>select_dice</code> helps enforce the <i>Hog
+wild</i> special rule. This function takes two arguments: the scores for th=
+e
+current and opposing players.</p>
+
+<p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 3
+</pre>
+
+<p><strong>Problem 4</strong> (3 pt). Finally, implement the <code>play</co=
+de>
+function, which simulates a full game of Hog. Players alternate turns, each
+using the strategy originally supplied, until one of the players reaches th=
+e
+<code>goal</code> score. When the game ends, <code>play</code> returns the =
+final
+total scores of both players, with Player 0's score first, and Player 1's s=
+core
+second.</p>
+
+<p>Here are some hints:</p>
+
+<ul>
+  <li>Remember to enforce all the special rules! You should enforce
+  the <i>Hog wild</i> special rule here (by using
+  <code>select_dice</code>), as well as the <i>Swine swap</i> special
+  rule here.</li>
+
+  <li>You should use the <code>take_turn</code> function that you've
+  already written.</li>
+
+  <li>You can get the value of the other player (either 0 or 1) by calling =
+the
+  provided function <code>other</code>. For example, <code>other(0)</code>
+  evaluates to 1.
+
+  </li><li>A <em>strategy</em> is a function that determines how many dice =
+a player
+  wants to roll, depending on the scores of both players. A strategy functi=
+on
+  (such as <code>strategy0</code> and <code>strategy1</code>) takes two
+  arguments: scores for the current player and opposing player. A strategy
+  function returns the number of dice that the current player wants to roll
+  in the turn. Don't worry about details of implementing strategies yet. Yo=
+u
+  will develop them in Phase 2.</li>
+</ul>
+
+<p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 4
+</pre>
+
+<p>You can also run an interactive test, where you can choose how many dice=
+ to
+roll for both players. You will want to add <code>print</code> statements t=
+o
+show the result of playing the game, but be sure to remove them before movi=
+ng on
+to Phase 2.
+
+</p><pre>      python3 hog.py -i play
+</pre>
+
+<p>Once you are finished, you will be able to play a graphical version of
+the game. We have provided a file called <code><a href=3D"https://emziniwec=
+ode.com/cs7/proj/hog/hog_gui.py.html">hog_gui.py</a></code> that
+you can run from the terminal:</p>
+
+<pre>      python3 hog_gui.py
+</pre>
+
+<p>If you don't already have Tkinter (Python's graphics library)
+installed, you'll need to install it first before you can run the
+GUI.</p>
+
+<p>The GUI relies on your implementation, so if you have any bugs in
+your code, they will be reflected in the GUI. This means you can also
+use the GUI as a debugging tool; however, it's better to run the tests
+first.</p>
+
+<p>Congratulations! You have finished Phase 1 of this project!</p>
+
+<h3>Phase 2: Strategies</h3>
+
+<p>In the second phase, you will experiment with ways to improve upon the
+basic strategy of always rolling a fixed number of dice. First, you need to
+develop some tools to evaluate strategies.</p>
+
+<p><strong>Problem 5</strong> (2 pt). Implement the <code>make_averaged</co=
+de>
+function. This higher-order function takes a function <code>fn</code> as an
+argument. It returns another function that takes the same number of argumen=
+ts as
+the original. This returned function differs from the input function in tha=
+t it
+returns the average value of repeatedly calling <code>fn</code> on the same
+arguments. This function should call <code>fn</code> a total of
+<code>num_samples</code> times and return the average of the results.</p>
+
+<p><em>Note:</em> If the input function <code>fn</code> is a non-pure funct=
+ion
+(for instance, the <code>random</code> function), then <code>make_averaged<=
+/code>
+will also be a non-pure function.</p>
+
+<p>To implement this function, you need a new piece of Python syntax! You
+must write a function that accepts an arbitrary number of arguments, then c=
+alls
+another function using exactly those arguments. Here's how it works.</p>
+
+<p>Instead of listing formal parameters for a function, we write
+<code>*args</code>. To call another function using exactly those arguments,=
+ we
+call it again with <code>*args</code>. For example,</p>
+
+<pre>      &gt;&gt;&gt; def printed(fn):
+      ...     def print_and_return(*args):
+      ...         result =3D fn(*args)
+      ...         print('Result:', result)
+      ...         return result
+      ...     return print_and_return
+      &gt;&gt;&gt; printed_pow =3D printed(pow)
+      &gt;&gt;&gt; printed_pow(2, 8)
+      Result: 256
+      256
+</pre>
+
+<p>Read the docstring for <code>make_averaged</code> carefully to understan=
+d how
+it is meant to work.</p>
+
+<p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 5
+</pre>
+
+<p><strong>Problem 6</strong> (2 pt). Implement the
+<code>max_scoring_num_rolls</code> function, which runs an experiment to
+determine the number of rolls (from 1 to 10) that gives the maximum average
+score for a turn.  Your implementation should use <code>make_averaged</code=
+> and
+<code>roll_dice</code>.  It should print out the average for each possible
+number of rolls, as in the doctest for <code>max_scoring_num_rolls</code>.
+
+</p><p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 6
+</pre>
+
+To run this experiment on randomized dice, call <code>run_experiments</code=
+>
+using the <code>-r</code> option:
+
+<pre>      python3 hog.py -r
+</pre>
+
+<p><strong>Running experiments</strong></p> For the remainder of this proje=
+ct,
+you can change the implementation of <code>run_experiments</code> as you wi=
+sh.
+By calling <code>average_win_rate</code>, you can evaluate various Hog
+strategies. For example, change the first <code>if False:</code> to <code>i=
+f
+True:</code> in order to evaluate <code>always_roll(8)</code> against the
+baseline strategy of <code>always_roll(5)</code>.  You should find that it =
+loses
+more often than it wins, giving a win rate below 0.5.
+
+<p>Some of the experiments may take up to a minute to run. You can always r=
+educe
+the number of samples in <code>make_averaged</code> to speed up experiments=
+.</p>
+
+<p><strong>Problem 7</strong> (1 pt). A strategy can take advantage of the
+<i>Free bacon</i> rule by rolling 0 when it is most beneficial to do so.
+Implement <code>bacon_strategy</code>, which returns 0 whenever rolling 0 w=
+ould
+give <b>at least</b> <code>BACON_MARGIN</code> points and returns
+<code>BASELINE_NUM_ROLLS</code> otherwise (these two global variables
+are located right above the <code>always_roll</code> function).</p>
+
+<p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 7
+</pre>
+
+<p>Once you have implemented this strategy, change <code>run_experiments</c=
+ode>
+to evaluate your new strategy against the baseline. You should find that it
+wins more than half of the time.</p>
+
+<p><strong>Problem 8</strong> (2 pt). A strategy can also take advantage of
+the <i>Swine swap</i> rule. Implement <code>swap_strategy</code>, which
+
+</p><ol>
+
+  <li>Rolls 0 if it would cause a beneficial swap that gains points.
+
+  </li><li>Rolls <code>BASELINE_NUM_ROLLS</code> if rolling 0 would cause a=
+ harmful
+  swap that loses points.
+
+  </li><li>If rolling 0 would not cause a swap, then do so if it would give
+  <b>at least</b>
+  <code>BACON_MARGIN</code> points and roll <code>BASELINE_NUM_ROLLS</code>
+  otherwise.
+
+</li></ol>
+
+<p>Test your implementation before moving on:</p>
+
+<pre>      python3 hog_grader.py -q 8
+</pre>
+
+<p>Once you have implemented this strategy, update <code>run_experiments</c=
+ode>
+to evaluate your new strategy against the baseline.  You should find that i=
+t
+performs even better than <code>bacon_strategy</code>, on average.</p>
+
+<p>At this point, run the entire autograder to see if there are any tests t=
+hat don't pass.</p>
+
+<pre>      python3 hog_grader.py
+</pre>
+
+<p><strong>Problem 9</strong> (3 pt). Implement <code>final_strategy</code>=
+,
+which combines these ideas and any other ideas you have to achieve a win ra=
+te
+of at least 0.59 against the baseline <code>always_roll(5)</code> strategy.
+Some ideas:</p>
+
+<ul>
+    <li>Find a way to leave your opponent with four-sided dice more often.<=
+/li>
+
+    <li>If you are in the lead, you might take fewer risks. If you are losi=
+ng,
+    you might take bigger risks to catch up.</li>
+
+    <li>Vary your rolls based on whether you will be rolling four-sided or =
+six-
+    sided dice.
+</li></ul>
+
+<p><em>Note</em>: You may want to increase the number of samples to improve=
+ the
+approximation of your win rate. The course autograder will compute your exa=
+ct
+average win rate (without sampling error) for you once you submit your proj=
+ect,
+and it will send it to you in an email.</p>
+
+<p>You can also play against your final strategy with the graphical user
+interface:</p>
+
+<pre>      python3 hog_gui.py -f
+</pre>
+
+<p>The GUI will alternate which player is controlled by you.</p>
+
+<p>Congratulations, you have reached the end of your first project for CS 7=
+!</p>
+
+
+</body></html>
+------MultipartBoundary--RmsVH418UpIZOxH0E9MkWhkROuSCXdim31r7cZ49Ax----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://emziniwecode.com/cs7/proj/hog/assignments.css
+
+@charset "windows-1252";
+
+@import url("61a_style.css");
+
+h2, h3, h4, h5 { color: rgb(51, 51, 51); font-weight: 600; font-size: 200%;=
+ }
+
+h2 { border-bottom: 1px solid steelblue; padding: 10px 75px 8px 0px; line-h=
+eight: 100%; }
+
+h3 { font-size: 140%; line-height: 90%; border-bottom: 1px dotted steelblue=
+; margin-top: 30px; }
+
+h4 { font-size: 120%; margin: 20px 0px 10px; text-decoration: underline; }
+
+h5 { font-size: 90%; }
+
+.code { margin-top: -1.5em; margin-bottom: 1em; font-family: monospace; whi=
+te-space: pre; display: block; }
+
+pre { overflow: auto hidden; margin-bottom: 30px; }
+
+ul, ol, li { margin: 0px; padding: 1px; }
+
+ul, ol { margin-left: 25px; }
+
+table.ant { margin: 10px auto; border-collapse: collapse; }
+
+table.ant td { margin: 0px; padding: 0.5em; border: 1px solid rgb(0, 0, 0);=
+ text-align: center; }
+------MultipartBoundary--RmsVH418UpIZOxH0E9MkWhkROuSCXdim31r7cZ49Ax----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://emziniwecode.com/cs7/proj/hog/61a_style.css
+
+@charset "windows-1252";
+=0A
+------MultipartBoundary--RmsVH418UpIZOxH0E9MkWhkROuSCXdim31r7cZ49Ax----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/hog/die5.gif
+
+R0lGODlhZABkAPcAAAAAAAEBAQICAgMDAwQEBAUFBQYGBgcHBwgICAkJCQoKCgsLCwwMDA0NDQ4O
+Dg8PDxAQEBERERISEhMTExQUFBUVFRYWFhcXFxgYGBkZGRoaGhsbGxwcHB0dHR4eHh8fHyAgICEh
+ISIiIiMjIyQkJCUlJSYmJicnJygoKCkpKSoqKisrKywsLC0tLS4uLi8vLzAwMDExMTIyMjMzMzQ0
+NDU1NTY2Njc3Nzg4ODk5OTo6Ojs7Ozw8PD09PT4+Pj8/P0BAQEFBQUJCQkNDQ0REREVFRUZGRkdH
+R0hISElJSUpKSktLS0xMTE1NTU5OTk9PT1BQUFFRUVJSUlNTU1RUVFVVVVZWVldXV1hYWFlZWVpa
+WltbW1xcXF1dXV5eXl9fX2BgYGFhYWJiYmNjY2RkZGVlZWZmZmdnZ2hoaGlpaWpqamtra2xsbG1t
+bW5ubm9vb3BwcHFxcXJycnNzc3R0dHV1dXZ2dnd3d3h4eHl5eXp6ent7e3x8fH19fX5+fn9/f4CA
+gIGBgYKCgoODg4SEhIWFhYaGhoeHh4iIiImJiYqKiouLi4yMjI2NjY6Ojo+Pj5CQkJGRkZKSkpOT
+k5SUlJWVlZaWlpeXl5iYmJmZmZqampubm5ycnJ2dnZ6enp+fn6CgoKGhoaKioqOjo6SkpKWlpaam
+pqenp6ioqKmpqaqqqqurq6ysrK2tra6urq+vr7CwsLGxsbKysrOzs7S0tLW1tba2tre3t7i4uLm5
+ubq6uru7u7y8vL29vb6+vr+/v8DAwMHBwcLCwsPDw8TExMXFxcbGxsfHx8jIyMnJycrKysvLy8zM
+zM3Nzc7Ozs/Pz9DQ0NHR0dLS0tPT09TU1NXV1dbW1tfX19jY2NnZ2dra2tvb29zc3N3d3d7e3t/f
+3+Dg4OHh4eLi4uPj4+Tk5OXl5ebm5ufn5+jo6Onp6erq6uvr6+zs7O3t7e7u7u/v7/Dw8PHx8fLy
+8vPz8/T09PX19fb29vf39/j4+Pn5+fr6+vv7+/z8/P39/f7+/v///yH5BAAAAAAALAAAAABkAGQA
+Bwj/AAUMIECQQIECBAwoPHAAAcOGCRwikOjwQMSJChIoWKAgY0eNDEIyeMBxAYOMExEkOGDgYEuE
+CAsajDmgZk2BAnIG2MkTgM+fAATALGCAoUaTDBo4cPCA6YOmDyBAiDA1woQIErBmnTBBggSuXCtQ
+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
+
+------MultipartBoundary--RmsVH418UpIZOxH0E9MkWhkROuSCXdim31r7cZ49Ax------

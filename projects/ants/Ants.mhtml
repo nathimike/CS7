@@ -1,0 +1,1809 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://emziniwecode.com/cs7/proj/ants/
+Subject: Ants
+Date: Wed, 19 Jul 2023 08:13:13 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----"
+
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: text/html
+Content-ID: <frame-F4F7EE0F75F2E3CF638B40D03C1967F2@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://emziniwecode.com/cs7/proj/ants/
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dwindows-1252">
+<link href=3D"https://emziniwecode.com/cs7/proj/ants/css/assignments.css" r=
+el=3D"stylesheet" type=3D"text/css">
+<title>Ants</title>
+</head>
+
+<body>
+<h2>Project 3: Ants Vs. SomeBees</h2>
+
+<blockquote>
+  <center>
+    <img src=3D"https://emziniwecode.com/cs7/proj/ants/img/splash.png" heig=
+ht=3D"500px">
+  </center>
+  <p><cite></cite></p><center>The bees are coming!<br>
+  Create a better soldier<br>
+  With inherit-ants.</center><p></p>
+</blockquote>
+<h3>Introduction</h3>
+
+<p>In this project, you will create a <a href=3D"https://secure.wikimedia.o=
+rg/wikipedia/en/wiki/Tower_defense">tower
+  defense</a> game called Ants Vs. SomeBees.  As the ant queen, you populat=
+e
+your colony with the bravest ants you can muster.  Your ants must protect t=
+heir
+queen from the evil bees that invade your territory.  Irritate the bees eno=
+ugh
+by throwing leaves at them, and they will be vanquished.  Fail to pester th=
+e
+airborne intruders adequately, and your queen will succumb to the bees' wra=
+th.
+This game is inspired by PopCap Games' <a href=3D"http://www.popcap.com/gam=
+es/pvz/web">Plants Vs. Zombies</a> =AE.</p>
+
+<p>This project combines functional and object-oriented programming paradig=
+ms,
+focusing on the material from Chapter 2.5 of the lecture notes.  The projec=
+t
+also involves understanding, extending, and testing a large program with ma=
+ny
+related parts.</p>
+
+<p>This project includes several files, but all of your changes will be mad=
+e to
+the first one.  You can download all of the project code as a <a href=3D"ht=
+tps://emziniwecode.com/cs7/proj/ants/ants.zip">zip archive</a>.</p>
+
+<table cellpadding=3D"10">
+  <tbody><tr>
+    <td><code><a href=3D"https://emziniwecode.com/cs7/proj/ants/ants.py.htm=
+l">ants.py</a></code></td>
+    <td>The game logic of Ants Vs. SomeBees.</td>
+  </tr>
+  <tr>
+    <td><code><a href=3D"https://emziniwecode.com/cs7/proj/ants/ants_grader=
+.py.html">ants_grader.py</a></code></td>
+    <td>A suite of tests for the project.</td>
+  </tr>
+  <tr>
+    <td><code><a href=3D"https://emziniwecode.com/cs7/proj/ants/ants_gui.py=
+.html">ants_gui.py</a></code></td>
+    <td>Graphics for Ants Vs. SomeBees.</td>
+  </tr>
+  <tr>
+    <td><code><a href=3D"https://emziniwecode.com/cs7/proj/ants/graphics.py=
+.html">graphics.py</a></code></td>
+    <td>General functions for displaying simple two-dimensional animations.=
+</td>
+  </tr>
+  <tr>
+    <td><code><a href=3D"https://emziniwecode.com/cs7/proj/ants/ucb.py.html=
+">ucb.py</a></code></td>
+    <td>Utility functions for CS 61A.</td>
+  </tr>
+  <tr>
+    <td><code><a href=3D"https://emziniwecode.com/cs7/proj/ants/autograder.=
+py.html">autograder.py</a></code></td>
+    <td>Utility functions for grading.</td>
+  </tr>
+  <tr>
+    <td><code><a href=3D"https://emziniwecode.com/cs7/proj/ants/img">img</a=
+></code></td>
+    <td>A directory of images used by the graphical version of the game.</t=
+d>
+  </tr>
+</tbody></table>
+
+<h3>Logistics</h3>
+
+<p>This is a 10-day project. You'll work in a team of two people, person A =
+and
+person B. In each part, you will do some of the work separately and some
+together with your partner. For example, if a problem is marked A1, then it=
+ is a
+solo problem for person A. Both partners should read, think about, and
+understand the solution to all questions. Feel free to help each other on t=
+he
+solo questions. If you choose to work on the whole project alone, you must
+complete all questions yourself.</p>
+
+<p>Start early!  The amount of time it takes to complete a project (or any
+program) is unpredictable.  Ask for help early and often -- the TAs and lab
+assistants are here to help. You are not alone!</p>
+
+<p>In the end, you and your partner will submit one project.  Person-specif=
+ic
+problems are graded individually and do not affect your partner's score.  T=
+here
+are 25 possible points for each person, 22 of which  are assigned for
+correctness, and three points for the overall composition of your program. =
+There
+are also two points of extra credit available at the end of the project, du=
+e
+with your submission.</p>
+
+<p>The only file that you are required to submit is <code><a href=3D"https:=
+//emziniwecode.com/cs7/proj/ants/ants.py.html">ants.py</a></code>.
+You do not need to modify any other files to complete the project. To submi=
+t
+the project, change to the directory where the files are located and run
+<code>submit proj3</code>.</p>
+
+<h3>Core Concepts</h3>
+
+<p>A game of Ants Vs. SomeBees consists of a series of turns.  In each turn=
+, new
+bees may enter the ant colony.  Then, new ants are placed.  Finally, all in=
+sects
+(ants, then bees) take individual actions: bees sting ants, and ants throw
+leaves at bees.  The game ends either when a bee reaches the ant queen (you
+lose), or the entire bee flotilla has been vanquished (you win).</p>
+
+<p><b>The Colony</b>.  The colony consists of several places that are chain=
+ed
+together.  The <code>exit</code> of each <code>Place</code> leads to anothe=
+r
+<code>Place</code>.</p>
+
+<p><b>Placing Ants</b>.  There are two constraints that limit ant productio=
+n.
+Placing an ant uses up some amount of the colony's food, a different amount=
+ for
+each type of ant.  Also, only one ant can occupy each <code>Place</code>.</=
+p>
+
+<p><b>Bees</b>.  When it is time to act, a bee either moves to the
+<code>exit</code> of its current <code>Place</code> if no ant blocks its pa=
+th,
+or stings an ant that blocks its path.</p>
+
+<p><b>Ants</b>.  Each type of ant takes a different action and requires a
+different amount of food to place.  The two most basic ant types are the
+<code>HarvesterAnt</code>, which adds one food to the colony during each tu=
+rn,
+and the <code>ThrowerAnt</code>, which throws a leaf at a bee each turn.</p=
+>
+
+
+<h3>The Code</h3>
+
+<p>Most concepts in the game have a corresponding class that encapsulates t=
+he
+logic for that concept.  For instance, a <code>Place</code> in the colony h=
+olds
+insects and connects to other places.  A <code>Bee</code> stings ants and
+advances through exits.</p>
+
+<p>The game can be run in two modes: as a text-based game or using a graphi=
+cal
+user interface (GUI).  The game logic is the same in either case, but the G=
+UI
+enforces a turn time limit that makes playing the game more exciting.  The
+text-based interface is provided for debugging and development.</p>
+
+<p>The files are separated according to these two modes.  <code><a href=3D"=
+https://emziniwecode.com/cs7/proj/ants/ants.py.html">ants.py</a></code>
+knows nothing of graphics or turn time limits.  All graphical elements are
+specified in <code><a href=3D"https://emziniwecode.com/cs7/proj/ants/ants_g=
+ui.py.html">ants_gui.py</a></code> and <code><a href=3D"https://emziniwecod=
+e.com/cs7/proj/ants/graphics.py.html">graphics.py</a></code>.  It is
+possible to complete this project without ever reading the graphics files.<=
+/p>
+
+<p>To start a text-based game, run</p>
+
+<pre>python3 ants.py</pre>
+
+<p>To start a graphical game, run</p>
+
+<pre>python3 ants_gui.py</pre>
+
+<p>When you start the graphical version, a new window should appear:</p>
+
+<center>
+  <img src=3D"https://emziniwecode.com/cs7/proj/ants/img/gui_explanation.pn=
+g" style=3D"border: 1px solid #000;">
+</center>
+
+<p>In the starter implementation, you have unlimited food and your ants onl=
+y
+throw leaves at bees in their current <code>Place</code>.  Try playing a ga=
+me
+anyway!  You'll need to place a lot of <code>ThrowerAnt</code>s (the second
+type) in order to keep the bees from reaching your queen.</p>
+
+<p>The game has several options that you will use throughout the project,
+which you can view with <code>--help</code>.</p>
+
+<pre>python3 [ants.py|ants_gui.py] [OPTIONS]
+    Run the Ants vs. SomeBees project.
+
+    -h, --help      Prints this help message
+    -t, --ten       Start with ten food
+    -f, --full      Loads a full layout and assault plan
+    -w, --water     Loads a full layout with water
+    -i, --insane    Loads a difficult assault plan
+</pre>
+
+<p>You have also been provided a testing file <code><a href=3D"https://emzi=
+niwecode.com/cs7/proj/ants/ants_grader.py.html">ants_grader.py</a></code> t=
+hat
+runs a series of unit tests for the project.  To test your project, you can
+run</p>
+
+<pre>python3 ants_grader.py -v</pre>
+
+<p>This command runs all of the unit tests along with any doctests in
+<code><a href=3D"https://emziniwecode.com/cs7/proj/ants/ants.py.html">ants.=
+py</a></code>. The optional <code>-v</code> generates more verbose
+output.  You can also run tests for individual questions:</p>
+
+<pre>python3 ants_grader.py -q 2
+python3 ants_grader.py -q A5</pre>
+
+<p>If you would like to learn more about Python's built-in unit testing
+framework, read the documentation of the <a href=3D"http://docs.python.org/=
+py3k/library/unittest.html">unittest module</a>.
+Most problems have associated tests.  Make sure that the tests for each pro=
+blem
+pass before moving on.</p>
+
+
+<h3>Phase 1</h3>
+
+<h4>Both Partners</h4>
+
+<p><b>Problem 1</b> (0 pts).  Answer the following questions with your part=
+ner
+after you have read the <i>entire</i> <code><a href=3D"https://emziniwecode=
+.com/cs7/proj/ants/ants.py.html">ants.py</a></code> file.  If you cannot
+answer these questions, read the file again.</p>
+
+<ol>
+  <li>Which method in which class runs a game? (the answer is not
+  <code>run</code>, because <code>run</code> is not a method)!</li>
+
+  <li>The <code>Hive</code>, a subclass of <code>Place</code>, is the start=
+ing
+  location of the bees.  Unlike most instances of <code>Place</code>, the
+  <code>Hive</code> class does not have an <code>exit</code>.  Explain how =
+and
+  when <code>Bee</code>s leave the <code>Hive</code>.</li>
+
+  <li>Explain the mechanism in the code by which the places in the colony a=
+re
+  laid out.  How do you modify the code to produce more places?</li>
+
+  <li>What is the significance of an <code>Insect</code>'s <code>armor</cod=
+e>
+  attribute?  What happens when <code>armor</code> reaches 0?</li>
+</ol>
+
+<p><b>Problem 2</b> (2 pts).  Add food costs and implement harvesters.
+Currently, there is no cost for deploying any type of <code>Ant</code>, and=
+ so
+there is no challenge to the game.  You'll notice that <code>Ant</code> sta=
+rts
+out with a base <code>food_cost</code> of 0.  Override this value in each o=
+f the
+subclasses listed below with the correct costs.</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_harveste=
+r.gif"> <br> <code>HarvesterAnt</code></td>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_thrower.=
+gif"> <br> <code>ThrowerAnt</code></td>
+    <td>4</td>
+    <td>1</td>
+ =20
+</tr></tbody></table>
+
+<p>Now there's no way to gather more food!  To fix this issue, implement th=
+e
+<code>HarvesterAnt</code> class.  A <code>HarvesterAnt</code> is a type of
+<code>Ant</code> that adds one food to the <code>colony.food</code> total a=
+s its
+<code>action</code>.</p>
+
+<p>Try playing the game again.  Once you have placed a
+<code>HarvesterAnt</code>, you should accumulate food each turn.  Vanquishi=
+ng
+the bees using the default game setup is now possible.</p>
+
+<p><b>Problem 3</b> (1 pts).  Add code to the <code>Place</code> constructo=
+r
+that tracks entrances.  Right now, a <code>Place</code> keeps track only of=
+ its
+<code>exit</code>.  We would like a <code>Place</code> to keep track of its
+entrance as well.  A <code>Place</code> needs to track only one
+<code>entrance</code>.</p>
+
+<p>However, simply passing an entrance to a <code>Place</code> constructor =
+will
+be problematic; we will need to have both the exit and the entrance before =
+we
+can create a <code>Place</code>! (It's a <a href=3D"https://secure.wikimedi=
+a.org/wikipedia/en/wiki/Chicken_or_the_egg">
+  chicken or the egg</a> problem.) To get around this problem, we will keep
+track of entrances in the following way instead.  The <code>Place</code>
+constructor should specify that:</p>
+
+<ul>
+  <li>A newly created <code>Place</code> always starts with its
+  <code>entrance</code> as <code>None</code>.</li>
+
+  <li>If the <code>Place</code> has an <code>exit</code>, then the
+  <code>exit</code>'s <code>entrance</code> is set to that
+  <code>Place</code>.</li>
+</ul>
+
+
+<h4>Person A: Water and Fire</h4>
+
+<p><b>Problem A4</b> (2 pts).  Add
+water to the colony.  Currently there are only two types of places, the
+<code>Hive</code> and a basic <code>Place</code>.  To make things more
+interesting, we're going to create a new type of <code>Place</code> called
+<code>Water</code>.</p>
+
+<p>Only an ant that is <code>watersafe</code> can be deployed to a
+<code>Water</code> place.  In order to determine whether an <code>Insect</c=
+ode>
+is <code>watersafe</code>, add a new attribute to the <code>Insect</code> c=
+lass
+named <code>watersafe</code> that is <code>False</code> by default.  Since =
+bees
+can fly, make their <code>watersafe</code> attribute <code>True</code>,
+overriding the default.</p>
+
+<p>Now, implement the <code>add_insect</code> method for <code>Water</code>=
+.
+First call <code>Place.add_insect</code> to add the insect, regardless of
+whether it is watersafe. Then, if the insect is not watersafe, reduce the
+insect's armor to 0 by invoking <code>reduce_armor</code>. <b>Do not</b> co=
+py
+and paste code. Try to use methods that have already been defined and make =
+use
+of inheritance to reuse the functionality of the <code>Place</code> class.<=
+/p>
+
+<p>Once you've finished this problem, play a game that includes water.  To
+access the <code>mixed_layout</code> that includes water, add the
+<code>--water</code> option (or <code>-w</code> for short) when you start t=
+he
+game.</p>
+
+<pre>python3 ants_gui.py --water</pre>
+
+
+<p><b>Problem A5</b> (3 pts).  Implement the <code>FireAnt</code>.  A
+<code>FireAnt</code> has a special <code>reduce_armor</code> method: when t=
+he
+<code>FireAnt</code>'s armor reaches zero or lower, it will reduce the armo=
+r of
+<i>all</i> <code>Bee</code>s in the same <code>Place</code> as the
+<code>FireAnt</code> by its <code>damage</code> attribute (defaults to
+<code>3</code>).</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_fire.gif=
+"> <br> <code>FireAnt</code></td>
+    <td>4</td>
+    <td>1</td>
+ =20
+</tr></tbody></table>
+
+<p><i>Hint:</i> If you iterate over a list, but change the contents of that=
+ list
+at the same time, you may not see all the elements.  As the <a href=3D"http=
+://docs.python.org/py3k/tutorial/controlflow.html#for-statements">
+  Python tutorial</a> suggests, "If you need to modify the list you are
+iterating over, you must iterate over a copy." Remember that damaging a bee=
+ may
+cause it to be removed from its place.</p>
+
+<p>Once you've finished implementing the <code>FireAnt</code>, give it a
+class attribute <code>implemented</code> with the value <code>True</code>.
+This attribute tells the game that you've added a new type of
+<code>Ant</code>.</p>
+
+<p>After implementing <code>FireAnt</code>, be sure to test your program by
+playing a game or two!  A <code>FireAnt</code> should destroy any co-locate=
+d
+Bees when it dies.  To start a game with ten food, use <code>--ten</code>.<=
+/p>
+
+
+<h4>Person B: Extended Range</h4>
+
+<p><b>Problem B4</b> (2 pts).  Implement the <code>nearest_bee</code> metho=
+d for
+the <code>ThrowerAnt</code> class.  In order for a <code>ThrowerAnt</code> =
+to
+attack, it must know which bee it should hit.  The provided implementation =
+will
+only hit bees in the same <code>Place</code>.  Your job is to fix it so tha=
+t a
+<code>ThrowerAnt</code> will <code>throw_at</code> the nearest bee in front=
+ of
+it that is not still in the <code>Hive</code>.</p>
+
+<p>The <code>nearest_bee</code> method returns a random <code>Bee</code> fr=
+om
+the nearest place that contains bees.  Places are inspected in order by
+following their <code>entrance</code> attributes.</p>
+
+<ul>
+  <li>Start from the current <code>Place</code> of the
+  <code>ThrowerAnt</code>.</li>
+
+  <li>For each place, return a random bee if there is any, or consider the =
+next
+  place that is stored as the current place's <code>entrance</code>.</li>
+</ul>
+
+<p>After implementing <code>nearest_bee</code>, a <code>ThrowerAnt</code> s=
+hould
+be able to <code>throw_at</code> a <code>Bee</code> in front of it that is =
+not
+still in the <code>Hive</code>.  Make sure that your ants do the right
+thing! To start a game with ten food, use <code>--ten</code>.</p>
+
+<p><b>Problem B5</b> (3 pts).  Now that the <code>ThrowerAnt</code> has bee=
+n
+completed, implement two subclasses of <code>ThrowerAnt</code>.</p>
+
+<ul>
+  <li>The <code>LongThrower</code> can only <code>throw_at</code> a
+  <code>Bee</code> that is found after following at least 4
+  <code>entrance</code> transitions.  So the <code>LongThrower</code> can't=
+ hit
+  <code>Bee</code>s that are in the same <code>Place</code> as it or the fi=
+rst 3
+  <code>Place</code>s in front of it. If there are two <code>Bees</code>, o=
+ne too
+  close to the <code>LongThrower</code> and the other within its range, the
+  <code>LongThrower</code> should throw past the closer <code>Bee</code>, i=
+nstead
+  targeting the farther one, which is within its range.
+
+  </li><li>The <code>ShortThrower</code> can only <code>throw_at</code> a
+  <code>Bee</code> that is found after following at most 2 <code>entrance</=
+code>
+  transitions.  So the <code>ShortThrower</code> can only hit <code>Bee</co=
+de>s
+  in the same <code>Place</code> as it and 2 <code>Place</code>s in front o=
+f
+  it.</li>
+</ul>
+
+<p>Neither of these specialized throwers can <code>throw_at</code> a
+<code>Bee</code> that is exactly 3 <code>Place</code>s away.  Placing a sin=
+gle
+one of these (and no other ants) should never win a default game.</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_shortthr=
+ower.gif"> <br>
+      <code>ShortThrower</code></td>
+    <td>3</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_longthro=
+wer.gif"> <br> <code>LongThrower</code></td>
+    <td>3</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+
+<p>To implement these behaviors, modify the <code>nearest_bee</code> method=
+ to
+reference <code>min_range</code> and <code>max_range</code> attributes, and=
+ only
+return a bee that is in range.</p>
+
+<p>For the base class, <code>ThrowerAnt</code>, set <code>min_range</code> =
+to 0
+and <code>max_range</code> to 10.  Then, implement the subclasses
+<code>LongThrower</code> and <code>ShortThrower</code> with appropriately
+constrained ranges and correct food costs.</p>
+
+<p>Set the <code>implemented</code> class attribute of <code>LongThrower</c=
+ode>
+and <code>ShortThrower</code> to <code>True</code>.</p>
+
+<p>Try playing a game with your newly implemented ants.  Be sure that they =
+do
+what you expect them to!  You can try running <code><a href=3D"https://emzi=
+niwecode.com/cs7/proj/ants/ants_gui.py.html">ants_gui.py</a></code> with th=
+e
+<code>--full</code> option to go up against a full swarm of bees in a
+multi-tunnel layout, and add <code>--insane</code> if you want a real chall=
+enge!
+If the bees are too numerous to vanquish, you might need to create some new=
+ ants
+in Phase 2.</p>
+
+
+<h3>Phase 2</h3>
+
+<h4>Person A: Seen and Unseen</h4>
+
+<p><b>Problem A6</b> (1 pts).  We are going to add some protection to our
+glorious <code>AntColony</code> by implementing the <code>WallAnt</code>, w=
+hich
+is an ant that does nothing each turn (already the default <code>action</co=
+de>
+of the <code>Ant</code> class).  A <code>WallAnt</code> is useful because i=
+t has
+a large <code>armor</code> value.</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_wall.gif=
+"> <br> <code>WallAnt</code></td>
+    <td>4</td>
+    <td>4</td>
+ =20
+</tr></tbody></table>
+
+<p><b>Problem A7</b> (3 pts).  Implement the <code>NinjaAnt</code>, which
+damages all <code>Bee</code>s that pass by, but is never seen.</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_ninja.gi=
+f"> <br> <code>NinjaAnt</code></td>
+    <td>6</td>
+    <td>1</td>
+ =20
+</tr></tbody></table>
+
+<p>A <code>NinjaAnt</code> is not able to be attacked by a <code>Bee</code>
+because it is hidden, nor does it block the path of a <code>Bee</code> that
+flies by.  To implement this behavior, first modify the <code>Ant</code> cl=
+ass
+to include a new class attribute <code>blocks_path</code> that is
+<code>True</code> by default.  Set the value of <code>blocks_path</code> to
+<code>False</code> in the <code>NinjaAnt</code> class.</p>
+
+<p>Second, modify the <code>Bee</code>'s method <code>blocked</code> to ret=
+urn
+<code>False</code> if either there is no <code>Ant</code> in the
+<code>Bee</code>'s <code>place</code> or if there is an <code>Ant</code>, b=
+ut
+its <code>blocks_path</code> attribute is <code>False</code>.  Now
+<code>Bee</code>s will just fly past <code>NinjaAnt</code>s.</p>
+
+<p>Finally, we want to make the <code>NinjaAnt</code> damage all
+<code>Bee</code>'s that fly past.  Implement the <code>action</code> method=
+ in
+<code>NinjaAnt</code> to reduce the armor of all <code>Bee</code>s in the s=
+ame
+<code>place</code> as the <code>NinjaAnt</code> by 1, overriding the defaul=
+t
+action method inherited from <code>Ant</code>.  Make sure that you override=
+ and
+use the inherited damage variable.</p>
+
+<p>For a challenge, try to win a default game using only
+<code>HarversterAnt</code> and <code>NinjaAnt</code>.</p>
+
+<h4>Person B: By Land and Sea</h4>
+
+<p><b>Problem B6</b> (1 pts).  Currently there are no ants that can be plac=
+ed on
+<code>Water</code>.  Implement the <code>ScubaThrower</code>, which is a
+subclass of <code>ThrowerAnt</code> that is more costly and
+<code>watersafe</code>, but otherwise identical to its base class.</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_scuba.gi=
+f"> <br> <code>ScubaThrower</code></td>
+    <td>5</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+
+<p>Placing a <code>ScubaAnt</code> in <code>Water</code> should not cause i=
+t to
+die.</p>
+
+<p><b>Problem B7</b> (3 pts).  We will now implement the new offensive unit
+called the <code>HungryAnt</code>, which will eat a random <code>Bee</code>=
+ from
+its <code>place</code>, instantly killing the <code>Bee</code>.  After eati=
+ng a
+<code>Bee</code>, it must spend 3 turns digesting before eating again.</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_hungry.g=
+if"> <br> <code>HungryAnt</code></td>
+    <td>4</td>
+    <td>1</td>
+ =20
+</tr></tbody></table>
+
+<p>To implement, give <code>HungryAnt</code> a <code>time_to_digest</code> =
+class
+attribute that holds the number of turns that it takes all
+<code>HungryAnt</code>s to digest (default to 3).  Also, give each
+<code>HungryAnt</code> an instance attribute <code>digesting</code> that co=
+unts
+the number of turns it has left to digest (default is 0, since it hasn't ea=
+ten
+anything at the beginning).</p>
+
+<p>Now we implement the <code>action</code> method of the <code>HungryAnt</=
+code>
+to check if it's digesting; if so, decrement its <code>digesting</code> cou=
+nter.
+Otherwise, eat a random <code>Bee</code> in its <code>place</code> (killing=
+ the
+<code>Bee</code> and restarting the <code>digesting</code> timer).</p>
+
+<h4>Both Partners</h4>
+
+<p><b>Problem 8</b> (5 pts). Implement the <code>BodyguardAnt</code>. Right=
+ now,
+our ants are quite frail. We'd like to provide a way to help them last long=
+er
+against the onslaught of the bees. Enter the <code>BodyguardAnt</code>.</p>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_weeds.gi=
+f"> <br> <code>BodyguardAnt</code></td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+
+<p>A <code>BodyguardAnt</code> differs from a normal <code>Ant</code> becau=
+se it
+can occupy the same <code>Place</code> as another ant.  When a
+<code>BodyguardAnt</code> is added to the same <code>Place</code> as anothe=
+r
+ant, it shields the other ant and protects it from damage.  Attacks should
+damage the <code>BodyguardAnt</code> first and only hurt the protected ant =
+after
+the <code>BodyguardAnt</code> has perished.</p>
+
+<p>A <code>BodyguardAnt</code> has an instance attribute <code>ant</code> t=
+hat
+stores the ant contained within the bodyguard.  It should start off as
+<code>None</code>, indicating that no ant is currently being protected.  Gi=
+ve
+<code>BodyguardAnt</code> a <code>contain_ant</code> method that takes an
+<code>Ant</code> argument and sets the <code>ant</code> instance attribute =
+to
+that argument.</p>
+
+<p>Now, change your program so that a <code>BodyguardAnt</code> and another
+<code>Ant</code> can simultaneously occupy the same <code>Place</code>:</p>
+
+<ol>
+  <li>Add an <code>Ant.container</code> class attribute that indicates whet=
+her
+  an ant can contain another.  For all <code>Ant</code>s except
+  <code>BodyguardAnt</code>, <code>container</code> should be
+  <code>False</code>.  The <code>BodyguardAnt.container</code> attribute sh=
+ould
+  be <code>True</code>.</li>
+
+  <li>We also need to give <code>Ant</code>s a new method,
+  <code>can_contain</code>, that takes an <code>other</code> ant as an argu=
+ment
+  and returns <code>True</code> if and only if:
+    <ol>
+      <li>This ant is a container.</li>
+      <li>This ant does not already contain another ant.</li>
+      <li>The other ant is not a container.</li>
+    </ol>
+  </li>
+
+  <li>Right now, if we attempt to put a second ant in a <code>Place</code>,=
+ the
+  <code>add_insect</code> method of the <code>Place</code> class will
+  immediately cause an error.  Change <code>add_insect</code> so that the
+  <code>Place</code> contains the container ant and the container ant conta=
+ins
+  the other ant:
+    <ul>
+      <li>If the <code>Ant</code> currently occupying this <code>Place</cod=
+e>
+      can contain the <code>Ant</code> we are trying to add, then simply te=
+ll it
+      to do so.</li>
+
+      <li>If the <code>Ant</code> we are trying to add can contain the
+      <code>Ant</code> currently occupying this <code>Place</code>, then ha=
+ve it
+      do so <em>and</em> set this <code>Place</code>'s ant to be the newly =
+added
+      <code>Ant</code>.</li>
+
+      <li>If neither <code>Ant</code> can contain the other, then raise the=
+ same
+      assertion error as before.</li>
+
+      <li><i>Hint:</i> Remember that you can quit out of a function at any =
+point
+  by just saying <code>return</code>.</li>
+
+    </ul>
+  </li>
+</ol>
+
+<p>Almost done!  Just a few more things to do.  </p>
+
+<ol>
+  <li>If a <code>BodyguardAnt</code> containing another ant is removed, the=
+n
+  the ant it is containing should be placed where the <code>BodyguardAnt</c=
+ode>
+  used to be. Update the <code>remove_insect</code> method in the
+  <code>Place</code> class accordingly.</li>
+
+  <li>The last step is to make sure that ants that are contained by
+  <code>BodyguardAnt</code>s still perform their action.  Override the
+  <code>action</code> method for <code>BodyguardAnt</code> accordingly.</li=
+>
+</ol>
+
+
+<p><b>Problem 9</b> (5 pts). Implement the <code>QueenAnt</code>. The queen=
+ is a
+waterproof <code>ScubaThrower</code> that inspires her fellow ants through =
+her
+bravery. Whenever the queen throws a leaf, she also doubles the damage of a=
+ll
+other ants in the same tunnel with her, including any ants protected by a
+bodyguard. Once any ant's damage has doubled, it cannot be doubled again.
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_queen.gi=
+f"> <br> <code>QueenAnt</code></td>
+    <td>6</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+
+</p><p>However, with great power comes great responsibility.  The Queen is
+governed by three special rules:
+
+</p><ol>
+  <li>If a bee ever enters the place occupied by the queen, then the bees
+  immediately win the game. The game ends even if the queen is protected by=
+ a
+  bodyguard. The bees also win if any bee reaches the end of a tunnel where=
+ the
+  queen normally would reside.
+
+  <p> In <code>AntColony.simulate</code>, the bees win the game whenever
+  <code>len(self.queen.bees) &gt; 0</code>, where <code>self</code> is the =
+ant
+  colony. Normally, the <code>queen</code> attribute of an
+  <code>AntColony</code> is an instance of a <code>Place</code>.  As part o=
+f the
+  <code>action</code> of a <code>QueenAnt</code>, the <code>colony.queen</c=
+ode>
+  should be replaced by a new object, a <code>QueenPlace</code>. A
+  <code>QueenPlace</code> has a <code>bees</code> property method that eval=
+uates
+  to the list of all bees that are either in the original
+  <code>colony.queen</code> location or the <code>place</code> of the
+  <code>QueenAnt</code>.
+
+  </p><p>You should not have to change the implementation of
+  <code>AntColony.simulate</code> or manipulate the location of bees in any
+  special way. You may assume that a <code>colony.queen</code> attribute wi=
+ll be
+  used for only one purpose: to check whether <code>len(self.queen.bees) &g=
+t;
+  0</code>.  Thus, a <code>QueenPlace</code> instance does not need to supp=
+ort
+  other <code>Place</code> methods, such as <code>add_insect</code>.</p></l=
+i>
+
+  <li><p>There can be only one true queen. Any queen beyond the first one i=
+s an
+  impostor and should die immediately (its armor reduced to 0) upon taking =
+its
+  first action, without doubling any ant's damage or throwing anything. Imp=
+ostor
+  queens should not affect the colony's <code>queen</code> attribute. You c=
+an
+  detect impostor queens by counting the number of times that an instance o=
+f
+  a <code>QueenAnt</code> has been constructed, using a class attribute.
+  Any <code>QueenAnt</code> beyond the first one created is an impostor. Yo=
+u
+  should not have to search through the colony places to find other queens.=
+</p></li>
+
+  <li><p>The true (first) queen cannot be removed. Attempts to remove the q=
+ueen
+  should have no effect (but should not cause an error). You will need to m=
+odify
+  the <code>remove_insect</code> method of <code>Place</code> to enforce th=
+is
+  condition.</p></li>
+</ol>
+
+<p>Some suggestions:</p>
+
+<ul>
+  <li>You can find every <code>Place</code> in a tunnel by starting at one
+  <code>Place</code> and then repeatedly follow both its <code>exit</code> =
+and
+  <code>entrance</code> attributes to the ends.
+
+  </li><li>To detect whether a <code>Place</code> is at the end of a tunnel=
+, check
+  whether its <code>exit</code> or <code>entrance</code> is <code>None</cod=
+e>.
+
+  </li><li>To make sure that you don't double the damage of the same ant tw=
+ice,
+    keep a list of all the ants that have been doubled.
+</li></ul>
+
+
+<p><b>Extra Credit</b> (2 pts). Implement two final thrower
+ants that do no damage, but instead replace the <code>action</code> method =
+of
+a <code>Bee</code> instance that they <code>throw_at</code> with a new meth=
+od
+that alters the <code>Bee</code>'s behavior for some duration.</p>
+
+<p>We will be implementing two new ants that
+subclass <code>ThrowerAnt</code>.</p>
+
+<ul>
+  <li><code>SlowThrower</code> applies a slow effect for 3 turns.</li>
+
+  <li><code>StunThrower</code> applies a stun effect for 1 turn.</li>
+</ul>
+
+<table class=3D"ant">
+  <tbody><tr>
+    <td><b>Class</b></td>
+    <td><b>Food</b></td>
+    <td><b>Armor</b></td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_freeze.g=
+if"> <br> <code>SlowThrower</code></td>
+    <td>4</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><img src=3D"https://emziniwecode.com/cs7/proj/ants/img/ant_stun.gif=
+"> <br> <code>StunThrower</code></td>
+    <td>6</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+
+<p>In order to complete the implementations of these two ants, you will nee=
+d to
+set their class attributes appropriately and implement the following three
+functions:</p>
+
+<ul>
+  <li>
+    <code>make_slow</code> takes an <code>action</code> method and returns =
+a new
+    <code>action</code> method which performs the original action on turns =
+where
+    <code>colony.time</code> is even and does nothing on other turns.
+  </li>
+
+  <li>
+    <code>make_stun</code> takes an <code>action</code> method and returns =
+a new
+    <code>action</code> method which does nothing.
+  </li>
+
+  <li>
+    <code>apply_effect</code> takes an <code>effect</code> (either
+    <code>make_slow</code> or <code>make_stun</code>), a <code>bee</code>, =
+and a
+    <code>duration</code>.  It then takes the bee's original action along w=
+ith
+    the "affected action" (the result of calling <code>effect</code> on the
+    original action) and replaces the bee's action with a new action method=
+ that
+    will call the affected action for <code>duration</code> turns and then =
+will
+    go back to calling the original action every turn.
+  </li>
+</ul>
+
+<p>Make sure to test your code!  Your code should be able to apply multiple
+effects on a target (each new effect applies on top of whatever action meth=
+od
+the bee already has at that point, and the target returns to the previous a=
+ction
+when the new one runs out).</p>
+
+<p><strong>You are now done with the project!</strong>  If you weren't able=
+ to
+vanquish the bees' insane-mode assault plan before, do your new ants help? =
+ Add
+some water or design your own layout to keep things interesting.</p>
+
+<p>Feel free to design additional ants, layouts, and assault plans and post=
+ them
+to Piazza.</p>
+
+<p><b>Acknowledgments:</b> Tom Magrino and Eric Tzeng developed this projec=
+t
+with John DeNero.  Jessica Wan contributed the artwork. Joy Jeng and Mark
+Miyashita invented the queen ant. Many others have contributed to the
+project as well!</p>
+
+
+</body></html>
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://emziniwecode.com/cs7/proj/ants/css/assignments.css
+
+@charset "windows-1252";
+
+@import url("61a_style.css");
+
+h2, h3, h4, h5 { color: rgb(51, 51, 51); font-weight: 600; font-size: 200%;=
+ }
+
+h2 { border-bottom: 1px solid steelblue; padding: 10px 75px 8px 0px; line-h=
+eight: 100%; }
+
+h3 { font-size: 140%; line-height: 90%; border-bottom: 1px dotted steelblue=
+; margin-top: 30px; }
+
+h4 { font-size: 120%; margin: 20px 0px 10px; text-decoration: underline; }
+
+h5 { font-size: 90%; }
+
+.code { margin-top: -1.5em; margin-bottom: 1em; font-family: monospace; whi=
+te-space: pre; display: block; }
+
+pre { overflow: auto hidden; margin-bottom: 30px; }
+
+ul, ol, li { margin: 0px; padding: 1px; }
+
+ul, ol { margin-left: 25px; }
+
+table.ant { margin: 10px auto; border-collapse: collapse; }
+
+table.ant td { margin: 0px; padding: 0.5em; border: 1px solid rgb(0, 0, 0);=
+ text-align: center; }
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://emziniwecode.com/cs7/proj/ants/css/61a_style.css
+
+@charset "windows-1252";
+
+body { font: medium / 1.75 "Gill Sans", "Gill Sans MT", Corbel, Helvetica, =
+"Nimbus Sans L", sans-serif; word-spacing: 0.1em; }
+
+h1, h2, h3, h4, aside { font-family: "Book Antiqua", Palatino, Georgia, ser=
+if; margin: 0px; }
+
+p { margin-bottom: 0.75em; font-size: medium; }
+
+html { background: rgb(255, 255, 255); color: rgb(34, 34, 34); }
+
+body { margin: 1em 40px; }
+
+pre { margin-top: 2em; }
+
+a:link, .w a { color: steelblue; }
+
+a:visited { color: rgb(180, 69, 130); }
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/gui_explanation.png
+
+iVBORw0KGgoAAAANSUhEUgAAAf0AAAD9CAYAAAC2u648AAAACXBIWXMAAAsTAAALEwEAmpwYAAAX
+T2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHja1XlXVFRLtO3au3cHQjc555wk55xBkuSs5Byb
+JoMiICBBQUARAUVBRUQFUaISREERDyIKKiaCSBAVA4KKcj/0nHPDux9vjPfz5keNOeZaNddaXzWq
+CoBnxZ9KjUKZAaJjEmhOlibCHp5ewsRnQAIOYAEKMPkHxlONHRxs4X/F10lAAAAeyvtTqVHwfweW
+oOD4QADEAQACguIDowGQqwCoSSCVlgCA2wCAseQEagIAdgcA2Gkenl4A2HMAYA/9zVcBgD3Aw9ML
+AI8BADvNxckUAM8NQGL096eFApDFAUA4KTA0AYBsBkBgjQkKjwFg8wAgGASG+QcB8FQCwLbo6Ngg
+AJ5bACAd8J98Qv+LZ8A/nv7+of/w37MAAADJLDyeGuWfCv+vER2V+HcNVgBgjInaYQsAnACwGORv
+ZgMA/ADwixrlYPs7B+ENjnF1/sO3xQTssP/DDUJoFk6/9yIO1AQTJwDgBkBCqAkOLn/0jLQw0x0A
+wAiAHA6ON//b52SEv7UDAFAAkFZaopMrAIgDIP3xSc7mAMAMgLxOC3Nx/5PzJSjY7I+OoiHhFlZ/
+OGt4gpULALADoKKRsTZOv2uhGmADURAMiUCDYIgBebAFUzD7s8pDCPgDDZIgGOIhEt4ADaLBBmIh
+CmKBBsJ/8kz/h2IB/kCDUAj+b47CEAixkPhPzb/Vfx3CIQhi/9H9/8RoEAzxvuHZ/1b4z35REAs0
+pSalJaXNv+OYJKaCqWMmmD5mgGmDMMaJ8YI8poZpYcaYIaaLqWPaYAGvgQahf/foG55Ni24NSaqM
+TdVxC/szQ8A/E7jBa6BB+P9xoj+9j650rPzTISQEpyQAAJjGUlNp4aFhCcLGVGpU8DZhq5hAhW3C
+KkrKyvD/Ezw8vYR/s89OgAAAwnn/Xy1WGUA7EADZ96/m9x6gIwKAxPqvJtkBwKQCMHw0MJGW9FvD
+AADwQA9MwA48IAhiIA3yoAIaoAtGYA7WYA8u4Ak+EAhhEA00SIbdkAV5UASH4AhUQS3Uwzm4CK3Q
+AdfhBgzBCIzBBDyDaZiHt7AKX+EHgiBEhIywITyIECKByCEqiBZigJgjtogT4on4IaFIDJKI7Eb2
+IUVIGVKFnEIakctIF3IDGUYeIE+RGWQJ+YR8R3EoI8qOCqCSqCKqhRqjNqgLugsNRePQNDQHLUYr
+0Tr0AtqO3kBH0Al0Gn2LruEAx4DjxIng5HFaOFOcPc4LF4Kj4TJwhbgKXB3uEq4bdxv3EDeNW8F9
+wwgYGyaMyWO62HbMFQvE4rAM7ABWhZ3D2rFb2ENsBlvFfuHJeH68HF4Hb4X3wIfik/F5+Ar8WXwb
+fhA/gZ/HfyUQCJwEKYImYTvBkxBBSCccIBwnNBP6CQ8Ic4Q1IpHIQ5Qj6hPtif7EBGIe8RjxArGP
+OE6cJ26QGEhCJBWSBcmLFEPKJlWQzpN6SeOkBdIPOmY6CTodOnu6ILpUuhK603TddPfp5ul+0LPQ
+S9Hr07vQR9Bn0VfSX6IfpH9O/5mBgUGUQZvBkSGcIZOhkqGF4Q7DDMM3RlZGWUZTxp2MiYzFjA2M
+/YxPGT+TyWRJshHZi5xALiY3km+SX5I3KGwUBYoVJYiyl1JNaaeMU94z0TFJMBkz+TClMVUwXWG6
+z7TCTMcsyWzK7M+cwVzN3MX8mHmNhY1FmcWeJZrlAMt5lmGWRVYiqySrOWsQaw5rPetN1jk2HJsY
+mylbINs+ttNsg2zz7AR2KXYr9gj2IvaL7KPsqxysHGocbhwpHNUcPRzTnDhOSU4rzijOEs5WzknO
+71wCXMZcwVwFXJe4xrnWufm4jbiDuQu5m7knuL/zCPOY80TylPJ08LzgxXhleR15k3lP8A7yrvCx
+8+nyBfIV8rXyTfGj/LL8Tvzp/PX89/jXBAQFLAWoAscEbgqsCHIKGglGCB4W7BVcEmITMhAKFzos
+1Ce0LMwhbCwcJVwpfEt4VYRfZLtIosgpkVGRH6JSoq6i2aLNoi/E6MW0xELEDosNiK2KC4nbie8W
+bxKfkqCT0JIIkzgqcVtiXVJK0l1yv2SH5KIUt5SVVJpUk9RzabK0oXScdJ30IxmCjJZMpMxxmTFZ
+VFZdNky2Wva+HCqnIRcud1zuwTb8Nu1tMdvqtj2WZ5Q3lk+Sb5KfUeBUsFXIVuhQeK8oruilWKp4
+W/GXkrpSlNJppWfKrMrWytnK3cqfVGRVAlWqVR6pklUtVPeqdqp+VJNTC1Y7ofZEnU3dTn2/+oD6
+Tw1NDZrGJY0lTXFNP80azcda7FoOWge07mjjtU2092pf1/6mo6GToNOq80FXXjdS97zuop6UXrDe
+ab05fVF9f/1T+tMGwgZ+BicNpg1FDP0N6wxnjcSMgozOGi0YyxhHGF8wfm+iZEIzaTNZN9Ux3WPa
+b4YzszQrNBs1ZzV3Na8yf2khahFq0WSxaqlumW7Zvx2/3WZ76fbHVgJWgVaNVqvWmtZ7rG/ZMNo4
+21TZzNrK2tJsu+1QO2u7crvnOyR2xOzosAd7K/ty+xcOUg5xDtccCY4OjtWOb5yUnXY73XZmc/Z1
+Pu/81cXEpcTlmau0a6LrgBuT2063Rrd1dzP3MvdpD0WPPR4jnrye4Z6dXkQvN6+zXmve5t5HvOd3
+qu/M2zm5S2pXyq5hH16fKJ8eXyZff98rfng/d7/zfpv+9v51/msBVgE1AauBpoFHA98GGQUdDloK
+1g8uC14I0Q8pC1kM1Q8tD10KMwyrCFsJNw2vCv8YsT2iNmI90j6yIXIryj2qOZoU7RfdFcMaExlz
+K1YwNiX2AVWOmkedjtOJOxK3SrOhnY1H4nfFdyawJ1AT7iVKJ+YmziQZJFUnbSS7JV9JYUmJSbmX
+KptakLqQZpF2Jh1LD0wf2C2yO2v3zB7jPacykIyAjIG9Yntz9s5nWmaey6LPisz6K1spuyz7yz73
+fd05AjmZOXO5lrlNeZQ8Wt7j/br7a/Ox/PD80QLVgmMFvwqDCu8WKRVVFG0eCDxw96DywcqDW8Uh
+xaMlGiUnDhEOxRyaLDUsPVfGUpZWNlduV95+WPhw4eEvR3yPDFeoVdQepT+aeHS60ray85j4sUPH
+NqvCqiaqTaqba/hrCmrWjwcdHz9hdOJSrUBtUe33k+Enn5yyPNVeJ1lXUU+oT6p/c9rt9O0zWmca
+z/KeLTr7syGmYfqc07lbjZqNjef5z5c0oU2JTUsXdl4Yu2h2sfOS/KVTzZzNRS3QktiyfNnv8mSr
+TevAFa0rl65KXK1pY2srbEfaU9tXO8I6pjs9Ox90WXcNdOt2t11TuNZwXeR6dQ9HT0kvfW9O71Zf
+Wt9aP7V/5UbojbkB34FnNz1uPrrleGt00GbwzpDF0M3bxrf77ujfuT6sM9x1V+tux4jGSPs99Xtt
+f6n/1TaqMdp+X/N+55j2WPcDvQe944bjNx6aPRx6ZPVoZGLHxINJ18knj3c+nn4S9GTxadTTj1NJ
+Uz+eZT7HPy98wfyi4iX/y7pXMq+apzWme2bMZu7NOs8+mwuce/s6/vXmfM4b8puKBaGFxkWVxetL
+Fktjy97L82+pb3+s5L1jeVfzXvr91Q9GH+6teqzOf6R93Pp04DPP54Yval8G1hzWXn6N/vpjvXCD
+Z+PcN61vt7+7f1/4kbxJ3Kz8KfOz+5fNr+db0VtbVH+aPwAA4AAADQkB+NQAQPYEYBsDoKf8vlP8
+AQ4BQAGACIJgDUUwh8giMUg/yoMmoFM4K9xNzBJ7hI8msBAGiLtJBnREuhf0XQw1jCXkBspzZmYW
+G9YCtmEOFs6dXBd4MF5/vh4BYcEDQhsiQaJT4jskhqUUpYtl3spZbauV/6poqnRQeUyVrGaiHq9R
+o9mvNa39U5dLT05f28Dc0Mko0DjeJMf0qFmTeZ/FQ8ul7VvWHDbbbE3tvHeE2yc55DqWOdU6N7l0
+uA64jbiPezz1fOU15724892uRZ/nvqN+ff7NAScCDwalBYeEOIbqhomHU8K/RryKHIpqjD4YQ411
+pmrG8cZt0l7G9yfUJ+YmhSRbpcil0qcup91Lb9lduScnI3lvXCYtKy27cN+pnJ7cV/vp8vUKqIX1
+RZMH6Yv1SqIPnSgdLft5eNsR74rCo+2V01UM1eo1vscLTrTWPjuF1cnXu53ee+bc2QcNG43C522b
+dl9ovfixWael5PKHK95X77fbdzzq0utOuNZ4/XkvQ59qv9uNuIHcm6W3KgYrhkpv59/ZN7z/7sGR
+g/dy/0oYdb+vcP/HWP+D9HGN8a8PHz/qmqia3PPY94nJU4kpuql3zx48b3tR9XLPK79psxmZWebZ
+b3NvXk/OD7+5sXBtsWupa/nM2+KVpHc+780/yK0yr659nPrU+/nUl9y1sK8264obbBvr355/7/9R
+t5nzM/iX2Zbo1hYAEIAXjCAFBhE2xBY5hLxCVdFi9DPOFzeJuWIv8FQChdBBDCbxkqboauhDGUwY
+9ckulDCmTOaTLDdYl9g5OMw4U7mauT/wKvDR+K8LMgi5CZ8X2RIzFs+S6JPclNaUiZA9Ljey7ZMC
+h6Kq0nZlb5VQ1Ti1VPU9GmmaEVre2rY6+rpKeqL6HAYkg++G74xmjCdM7pr2ml0xb7CotMzfnmwV
+Zu1ps91Wy05qB4c9Zv/FYdbxgVO/c4vLCdd8t3h3Hw8rT1UvAW+C9/udk7t6fOp9C/1i/V0C1AIZ
+A2eDuoJLQkJC9cJYwt6EX4sojQyO0olmip6L6YjNp3rGycVt0kbjTybQEk2TOJIWkrtSDqT6pCml
+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
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/ant_harvester.gif
+
+R0lGODlhQgBCAPcAAAAAAAAAEAAAbgABOAAcegIAIwIBTgIhKQYcVgwwhQ0LCBEcMBMCAhwaAx0c
+Gx0yOCUhAiUlJSYdOSdBjiwsLC8uAi81SDAwDDEyMjE0Ojs7Ozw4BDxNVj06R0AzJUBcx0JBVEJC
+Q0RHHUdJAkhHEEhcLUlOWUpLSk1r4lBJVlRWWlVQAFVSE1VVVVhbZVtbW1xWTl9eF2BoVGFeAGFt
+cmNgbGNjY2pmXmtodWtra21pGG17WnB3f3NvAHNzc3eFjXiDZnl2HHp6e36LaoJ/eYKFjISEhIeS
+eIeXmoiDAoqGHoqKiouLkpJ2d5SUlJahgZiTAJqhkJyXI5ycnKOjjqSjo6arn6ijAKmnX6m4kKqk
+Jaqqqqu0orCrJLG3q7S0tLfGmbmzJLm6srq6ur3Oo7+6Mr+7Vr/Dt8C6KsLCwsXOwMfYq8vFLcvL
+y87P0NLUy9LmtNPNMNPNVdTU1NvVM9vb29/j3OHd3ePj4+TdNebhfuro5urq6ury2OvlO+3mM/Dp
+APHqM/Hx7PPsO/TvbPXxj/jxN/j3uPn34v7+/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAAIoAIf/8SUNDUkdC
+RzEwMTIAAAIwQURCRQIQAABtbnRyUkdCIFhZWiAH0AAIAAsAEwAzADthY3NwQVBQTAAAAABub25l
+AAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUFEQkUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+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
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/ant_fire.gif
+
+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
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/ant_shortthrower.gif
+
+R0lGODlhQgBCAOYAAAAAAAAAEAABOAAbAAAcegIAIwIBTgg3AA0LCBMCAhMVFhoDIxwaAx0cGx0y
+OCEcJiUhAiUlJSYdOSdBjiklJi0vIS8uAi86Li9KrDAwDDEyMjE0OjMtKjhQATs7Ozw4BD06R0Az
+JUJCQ0JFN0RHHUdJAklOWUpLSlBJVlJQSFVQAFVSE1VVVVVaT1hbZVtbW19eF2BoVGFeAGFtcmF5
+OmNgbGNjY2todWtra217WnB3f3CNP3NvAHNzc3iDZnl2HHp6e3qdQoJ/eYKFjISEhIeSeIeXmoiD
+AoqGHoqKioyjrZSUlJSjj5ahgZqhkJyXI5ycnJyyuqOjjqSjo6Slqqarn6ijAKm4kKqkJaqqqqu0
+orCrJLG3q7S0tLfGmbmzJLq6ur3Oo8C6KsLCwsXOwMfYq8vFLcvLy9HkzNLmtNPNMNTU1NfquNvV
+M9vb2+Pj4+TdNej95erq6ury2OvlO+3mM/HqM/L97fPsO/jxN/7+/gAAAAAAAAAAAAAAAAAAACH5
+BAkAAHsAIf/8SUNDUkdCRzEwMTIAAAIwQURCRQIQAABtbnRyUkdCIFhZWiAH0AAIAAsAEwAzADth
+Y3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUFEQkUAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApjcHJ0AAAA/AAAADJkZXNjAAAB
+MAAAAGt3dHB0AAABnAAAABRia3B0AAABsAAAABRyVFJDAAABxAAAAA5nVFJDAAAB1AAAAA5iVFJD
+AAAB5AAAAA5yWFlaAAAB9AAAABRnWFlaAAACCAAAABRi/1hZWgAAAhwAAAAUdGV4dAAAAABDb3B5
+cmlnaHQgMjAwMCBBZG9iZSBTeXN0ZW1zIEluY29ycG9yYXRlZAAAAGRlc2MAAAAAAAAAEUFkb2Jl
+IFJHQiAoMTk5OCkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAADzUQABAAAAARbMWFla
+IAAAAAAAAAAAAAAAAAAAAABjdXJ2AAAAAAAAAAECMwAAY3VydgAAAAAAAAABAjMAAGN1cnYAAAAA
+AAAAAUACMwAAWFlaIAAAAAAAAJwYAABPpQAABPxYWVogAAAAAAAANI0AAKAsAAAPlVhZWiAAAAAA
+AAAmMQAAEC8AAL6cACwAAAAAQgBCAAAH/4B7goOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6f
+oKGVU2OinQUGBV2mmkAAGAY9rJgbCiIAFbOXAEu6mQBgvpgAWcKHIRA9Sb2LLHrGhSEEEwA2NgAA
+iS/M0IM9AAbZgmMaHocIpd2MMw2G4uqMIrKDbgBn8I32z2tQAED4jJaA0IGtBIwP2IYARFQDAA8z
+bdrAifhFxbuFgiSUMIPHTh47ID/S+QKgBkAgcuQIkAHnI8iXdep4VGPhRjcAO2gAwKGjREuZL1+6
+zKPmoq4ANIIE0QnATB6gQe3UEbPli9MtRll5OLBjR4cASIS6BAnnB4AMAFbYofMBmocKGf8oFPjy
+cWJEoE+a1ploB48VEMbWACACxacdMyuwNQXZRs1YxllNnQHwJkuJPG0gwDCjZgucqFHbRBa15IQe
+JZfhPGmT5zFoyMZETNFDRUVHmK9Djw4FYI2eLBY+Q8WdB8mTsaI3EXnhgYKHF0kOUdazZu7TqK3z
+iAGAxaVfwJagnMA2Y0kVLlGMxMCGAsogAG706Jlx5PZLOFXz/oDK1lISACMwgcYcc8QRxx0GEoiG
+ER7wsgcLs+nxn1NQicEABBk88VlIWFUSgAZaFGjgiCSOOIcWDTzHwhksAKCBCj+BVIcaZmwYUlGV
+AFDEHAiW6OOId8xRBAANAJBDGF44wEP/S1IFFdNMH5g0CQBQ/Gilj0xgIwUbbCS5kUdBtTYSAC5Q
+8kARV6ZJohBENpEGG2Gsd8QXatSBBxxmWMHDboz0I6KaaaJxAQM6vpnGFScUQIIMMqhggQA6WAKA
+FoBWWgUERVzBxpubhnGBCVBAkY6kZPRYqZV3kAFAGZum4SobZQywiiYkoHGqmmQsoKmrhuaAAicj
+2HrrlWgs0ASXXIbhw2CcAFDqsD+mCmARRfiQAwAoFBFBs12YCi2JXCRwAzY8FaPHNpzE8K2Pc6RQ
+wwkz3EMIEEQ0S+m6IzqxgQ0sHIJus2V4e+sdXAAwhnu+AMDFulpQ+YwxOtoqsI8IovFNQDHq3LIE
+GTzeYarHQZJhBAD9LnRLC0UwoQUXZXChBRNFjPcrRoTUwBwHFXDwHA409+zzz0AHLfTQRBdt9NGh
+BAIAOw==
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/ant_longthrower.gif
+
+R0lGODlhQgBCAOYAAAAAAAAAEAAbAAAcegIAIwIhKQg3AA0LCBMTAxMVFhwaAxwgJB0cGyEcJiUh
+AiUlJSVFAiYdOSklJiwsLC0vIS8uAi81SC9KrDAwDDEyMjE0OjhQATs7Ozw4BD06R0Bcx0JBVEJC
+Q0JFN0RHHURYI0dJAkhHEEhcLUlOWUpLSlJQSFNkNlVQAFVSE1VVVVhbZVtbW1xWTlxrRl14MV9e
+F2BoVGFeAGF5OmNgbGNjY2todWtra21pGG17WnB3f3NvAHNzc3iDZnl2HHp6e36LaoJ/eYKFjISE
+hIeSeIiDAoqGHoqKiouLkpSUlJahgZyXI5ycnKSjo6SlqqijAKm4kKqkJaqqqrCrJLS0tLfGmbmz
+JLq6ur3Oo7+6MsC6KsLCwsXOwMfYq8vFLcvLy9LmtNPNMNTU1NfquNvVM9vb2+Pj4+TdNevlO+3m
+M/HqM/PsO/jxN/7+/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAkAAHIAIf/8SUNDUkdCRzEwMTIAAAIwQURCRQIQAABtbnRyUkdCIFhZWiAH0AAIAAsAEwAzADth
+Y3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUFEQkUAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApjcHJ0AAAA/AAAADJkZXNjAAAB
+MAAAAGt3dHB0AAABnAAAABRia3B0AAABsAAAABRyVFJDAAABxAAAAA5nVFJDAAAB1AAAAA5iVFJD
+AAAB5AAAAA5yWFlaAAAB9AAAABRnWFlaAAACCAAAABRi/1hZWgAAAhwAAAAUdGV4dAAAAABDb3B5
+cmlnaHQgMjAwMCBBZG9iZSBTeXN0ZW1zIEluY29ycG9yYXRlZAAAAGRlc2MAAAAAAAAAEUFkb2Jl
+IFJHQiAoMTk5OCkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAADzUQABAAAAARbMWFla
+IAAAAAAAAAAAAAAAAAAAAABjdXJ2AAAAAAAAAAECMwAAY3VydgAAAAAAAAABAjMAAGN1cnYAAAAA
+AAAAAUACMwAAWFlaIAAAAAAAAJwYAABPpQAABPxYWVogAAAAAAAANI0AAKAsAAAPlVhZWiAAAAAA
+AAAmMQAAEC8AAL6cACwAAAAAQgBCAAAH/4BygoOEhYaHiImKi4yLUTowQ42TlJWCQAAABhUCmUuW
+oKGCHAArNzOoNycAOaKIMAQALq6CADKouKgrAE20hFgAFxcAtKW5uTcQIb6CVpkDA8SuAMfHJA3M
+GQBQUTEqvgCn1agmHOBHasyDExvixzcCO8VR6oTOJNU3G9KiAJ/1hKAAGIHvxop9AL7EcWUOIKE4
+wLRlCnEkTZwYmVKEAMDh36IUUBwW2gLAzJgvhKIA+PABQJEvUXLIWsRP5KUhC0cCgFZykJoj2xLV
+tJkBCyIrMWIY1UnP0BYGNgkBGBPqC4AtTqFGrWVGVBMGOQdZDWuzp6gHUMKOaXKValQAaf9cWUlh
+xUiETBVMZNIgSeSBuKHiWAXw48oaNmzasFlz5QeAFw4TAAYlhbCYN3DcaN785o0YxwDhhmJbpU3m
+zag1w3lzZei0rpacdcncJnXq2nC6uA5lthKAKm9sC98MpzWzqZZe/GAzHHWbNdA1s/kBmRaMXr7F
+wKndfI2STAqerIEjZrclDmQX4fgRHDec05vRdFCgRcwTHmvcvPnhA1y6SRZMsZ0bbaBhYH6bPYEB
+Gu8RqBlrC/gCEiUOlKGZd5kA0IGFmhmoGXebrWEeJU2kQEkJzK3RAgBalCGGEhw2J11C4GDVSAnB
+eWGCdg3KiBobDizlyhEm3tgegiD6KF3/BUJOY4WRSoaYpBts0OgLSZMlUkGMzdVWBgbaoSZiKFZI
+EcWZWGCRQgrpGRLggDLCIYQJCD54BQGUDJGDBhn2yQCfLriFyAtJBDccbVWwCJ9+/DEikCYQlGDK
+DZRSSoIJqwAgwpOGxAEGAGXAGeITV1xBAwBPOAdHGSMKwhYAJEw6Ti4rMJAJB5wOAhEASkzpBhqn
+YqCEGLbth4IifJLgzqzH1CqBAaxYFIcZICBQAwFXCNfGtr4W1yoAFSzLbDUrYMCACABMYAZJNWRx
+BhIAePGhjLjppshA4o47zggBUMARAEiQccYZZGByhWkO3ubGasYJNYK+EKNygrkAUMAF/8ECkwHv
+D2VgZttqZYCWSAoG5BvxrCT4mwIVGQ9MBZ9JXGFhZ2+gMUUSABx7r8knM0tCJiIEEQbBZ4ThRAoF
+mGADCyyUUIEF1SmSQ8k9V22ACkT0cDEZAhPMhQwRSAGFFE3eu0LVVZPAQRhct932GT0A0SZNPKM9
+zipbuy1wFgCU3Qg1dp+8i7t6E1xD1L4FLjgAVAzsOBlfBwVKOIpDvAsFTnCRRRZU9ADADku0KtTZ
+lY9LggRLeNAnDkbFsQMQoOQQbumz3rDNGAygZYiavNVd+SpY7NDKIVgsAwoKAvhut+3cTJBIEzD0
+oyztuNxgAHpQZCBUrpOPoHzE1gewVVAhmnw/ru0SjG+I6ifMYH71M/wsj/qGhA7ABqboS+kKEAAQ
+QFP0O8QRSAEACEyqUpU6AbQAEIKQBJARTIBBnyb4Oew88IIYzKAGN8jBDm4wEAA7
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/ant_ninja.gif
+
+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
+OBn00kw37fTTUP8SCAA7
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/ant_freeze.gif
+
+R0lGODlhQgBCAOYAAAAAAAAAbgABOAAYFQAcegIAIwIhKQYcVgwwhQw6VxEcMBMCAhMTAxMVFhwg
+JB0cGx0yOCEcJiUlJSdBjiklJiwsLC0vIS4AAC8uAi81SDEyMjE0OjMtKjs7Ozw4BDxNVj06R0Az
+JUBcx0JCQ0JFN0h0Z0lOWUpLSlJQSFOGolRWWlVVVVhbZVtbW1xWTmBoVGFtcmKcu2NjY2pmXmtr
+a3B3f3Nzc3eFjXp6e4J/eYKFjISEhIeXmonU+oqKioyjrZSUlJirtpycnJyyuqSjo6m/yqqqqrS0
+tLTM17q6usHZ5sK9vsLCwsvLy8vm8tTU1NTv/dr1/9vb2+L9/+Pj4+rq6v7+/gAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAkAAFcAIf/8SUNDUkdCRzEwMTIAAAIwQURCRQIQAABtbnRyUkdCIFhZWiAH0AAIAAsAEwAzADth
+Y3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUFEQkUAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApjcHJ0AAAA/AAAADJkZXNjAAAB
+MAAAAGt3dHB0AAABnAAAABRia3B0AAABsAAAABRyVFJDAAABxAAAAA5nVFJDAAAB1AAAAA5iVFJD
+AAAB5AAAAA5yWFlaAAAB9AAAABRnWFlaAAACCAAAABRi/1hZWgAAAhwAAAAUdGV4dAAAAABDb3B5
+cmlnaHQgMjAwMCBBZG9iZSBTeXN0ZW1zIEluY29ycG9yYXRlZAAAAGRlc2MAAAAAAAAAEUFkb2Jl
+IFJHQiAoMTk5OCkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAADzUQABAAAAARbMWFla
+IAAAAAAAAAAAAAAAAAAAAABjdXJ2AAAAAAAAAAECMwAAY3VydgAAAAAAAAABAjMAAGN1cnYAAAAA
+AAAAAUACMwAAWFlaIAAAAAAAAJwYAABPpQAABPxYWVogAAAAAAAANI0AAKAsAAAPlVhZWiAAAAAA
+AAAmMQAAEC8AAL6cACwAAAAAQgBCAAAH/4BXgoOEhYaHiImKi4yNjo+QkZKTlJWWhQCXmpAYCCIB
+m6GJVEAAnqCiqYNEACNEJJmqqjgAR7K3V7S4uLG7qrW+iEYAAA82NjiPI8GIIQQiBwA4NhUAK4s0
+PsyHJAEiAsmDPtKJJ0TbhxYAL4JEQoMANIgVSeiKAAkJvQDahhJM9hABSNGjx499AAlVOVEvoKEE
+BQtOGIRjhZVBTYxYsPHEYSGCEWNcgJdkSYsODTKYyBCBhDyPHmJE7CFy0AkAA278KKKkZ5EfNQCc
+cBhzZs0rNgDwUBKlqdOmUJDc6LXNBoyZKVxcGZEBCVQoYMOCjQKlCAAb6JgAKBKRHwoTTP/FyhUb
+BcnZbVU4FIjxI4EMGifizpVLFkpdAOeCPZFG4oIPIWsLDx4LRYkTp0Go4ppmhYoUKy1uTKZbpMYJ
+Fjy8QvmwIxiAhlcWqx4rOWxmFTxuOCjSdIhmWQ06CtrBwgllJEguj7XLg6zkKE5+q3opCEVzw0Vg
+LIjAIkhYJ0UMD2bRelc4QSR+kDXLYsgQGDzojv5Bwld5QRaGQD9Rw7DT0aQtYB8hFPBWmXEADhaF
+WQMO0kEQziU4Xwe+nHcFCupJCNYN3sl1A1q7nEDFIDOIJmEUSgCgX1jQGRDJAsQAAMEGDsS4jCEA
+NDFIEgAIRphTSphggnLLSXcIMTAMUUT/EUj0hNySPGTQCiEr9HOFFQBkONdPQfBAo4+G1SDDIi8A
+wEIRTlz21JpQOKEEDxDsI4UgVdhgAJgbajDCCDeAedgiAMCAhH8nNuXEQScwIQMOVgyzAQD9DeYm
+oSw6YQJ1hiQ1hHga0oUiDGeBIEOWSpgVX22UEQZFUInIUMBsnc5FFg8AVAMhWZnxQORo0LGKCC14
+xjrXQQyYMJtvLHj1FYvrZSBgIpEJK6FuXKlWlwmBookgWE4MwYKRg4RwnbQAoqjBDaCGZ5gTQYBq
+Zg01wPDoAhYiokCw5BKWmRI6dHjcQSvkcB8jOMCAar6y2qXuXFMU8YCOkDx4MMJyOQFD0w0TR1ED
+CpIAACvFCt7AgoJmwfaIxxODPJbIa64HAAdVSFJgyiqvCkAQTSqBRHbSuCJJiTRTjOIILoTwwAkZ
+xCmDjsNM8kHNJANAxTCumHyFBJOoGDTCJezAihEjGqIBJRDgi3AUmTFxwjsCUcIBDJyqfJgRV4C7
+w41Z37Dr2XaBuIjVkZhp9olQ+OY3MzfvXagSU3kEwAdBGPfUj4VJBQCFHgnyQLY9bdumkz/cdE3m
+hdACgAIm1HDD6jBI+TLbpCcCBA4zzECD17HnrvvuvPdeSSAAOw==
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://emziniwecode.com/cs7/proj/ants/img/ant_stun.gif
+
+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
+WsBCYAXL2MY69rENCQgAOw==
+
+------MultipartBoundary--KrU3tiqaOiKpZVBzw21usoOfL0ZMidAllXnv62aOXk------
